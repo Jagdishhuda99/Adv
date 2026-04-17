@@ -910,203 +910,197 @@ function openModal(i){
   const API_BASE = "https://bcr-election-2026.vercel.app";
   var slipUrl = API_BASE + "/card/" + v.id;
 
-  var html = `
-  <div style="padding:20px;position:relative">
+var html = `
+<div style="padding:20px;position:relative">
 
-    <!-- CLOSE -->
-    <button onclick="closeModal()" 
-      style="position:absolute;top:15px;right:15px;background:#eee;border:none;width:34px;height:34px;border-radius:50%;cursor:pointer">
-      ✕
-    </button>
-    
-    <!-- BADGE -->
-    <div style="background:#2563eb;color:#fff;display:inline-block;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600">
-      Electoral No. ${v.electoral_number || '-'}
+  <!-- CLOSE -->
+  <button onclick="closeModal()" 
+    style="position:absolute;top:15px;right:15px;background:#eee;border:none;width:34px;height:34px;border-radius:50%;cursor:pointer">
+    ✕
+  </button>
+  
+  <!-- BADGE -->
+  <div style="background:#2563eb;color:#fff;display:inline-block;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600">
+    Electoral No. ${v.electoral_number || '-'}
+  </div>
+
+  <!-- NAME -->
+  <h2 style="margin:10px 0 2px; font-weight:400; color:#0d2137; font-family:'DM Serif Display', serif;">
+    ${v.name}
+  </h2>
+
+  <div style="color:#777;font-size:13px;margin-bottom:12px">
+    ${v.roll_number || '-'}
+  </div>
+
+  <hr style="margin:16px 0;border:none;border-top:1px solid #e5e0d5">
+
+  <!-- CARD -->
+  <div style="position:relative;border-radius:12px;overflow:hidden">
+
+    <div style="position:relative; display:inline-block; width:100%;">
+
+      <!-- IMAGE -->
+      <img src="${slipUrl}" class="card-img"
+        style="
+          width:100%;
+          display:block;
+          user-select:none;
+          -webkit-user-drag:none;
+          pointer-events:none;
+        "
+        draggable="false"
+        oncontextmenu="return false;"
+      >
+
+      <!-- PROTECTION -->
+      <div style="
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        z-index:10;
+      " oncontextmenu="return false;"></div>
+
     </div>
 
-    <!-- NAME -->
-    <h2 style="margin:10px 0 2px; font-weight:400; color:#0d2137; font-family:'DM Serif Display', serif;">
-  ${v.name}
-</h2>
-    <div style="color:#777;font-size:13px;margin-bottom:12px">
-      ${v.roll_number || '-'}
+    <!-- 🔴 RECT BOX -->
+    <div class="rect-box"
+      style="
+        position:absolute;
+        width:110px;
+        height:80px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-weight:800;
+        font-size:22px;
+        color:#111;
+        background:#fff;
+      ">
     </div>
-    <hr style="margin:16px 0;border:none;border-top:1px solid #e5e0d5">
-    <!-- CARD -->
-    <div style="position:relative;border-radius:12px;overflow:hidden">
 
-  <div style="position:relative; display:inline-block; width:100%;">
-
-  <!-- IMAGE -->
-  <img src="${slipUrl}"
-       style="
-         width:100%;
-         display:block;
-         user-select:none;
-         -webkit-user-drag:none;
-         pointer-events:none;
-       "
-       draggable="false"
-       oncontextmenu="return false;"
-  >
-
-  <!-- PROTECTION OVERLAY -->
-  <div style="
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    z-index:10;
-  "
-  oncontextmenu="return false;">
-  </div>
-
-</div>
-
-  <!-- 🔴 NEW BALLOT CIRCLE -->
-  <div style="
-    position:absolute;
-    top:38%;
-    right:52%;
-    transform:translate(50%,-50%);
-    width:110px;
-    height:80px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-weight:800;
-    font-size:22px;
-    color:#111;
-    background:rgba(255,255,255,1);
-  ">
-    
-  </div>
+    <!-- 🔴 CIRCLE -->
+    <div class="ballot-circle"
+      style="
+        position:absolute;
+        border-radius:50%;
+        border:3px solid #111;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-weight:800;
+        color:#111;
+        background:#fff;
+        box-shadow:0 2px 6px rgba(0,0,0,0.2);
+      ">
+      190
+    </div>
 
 
-  <!-- 🔴 NEW BALLOT CIRCLE -->
-  <div style="
-    position:absolute;
-    top:38%;
-    right:32%;
-    transform:translate(50%,-50%);
-    width:80px;
-    height:80px;
-    border-radius:50%;
-    border:3px solid #111;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-weight:800;
-    font-size:22px;
-    color:#111;
-    background:rgba(255,255,255,1);
-    box-shadow:0 2px 6px rgba(0,0,0,0.2);
-  ">
-    190
-  </div>
-
-  <!-- BOTTOM STRIP -->
+  
+    <!-- BOTTOM STRIP -->
 <div style="
   position:absolute;
   bottom:0;
   left:0;
   right:0;
-  padding:12px 10px;
-  backdrop-filter: blur(6px);
-  background: rgba(255, 243, 176, 0.85); /* soft yellow */
+  padding:0.75rem 0.625rem;
+  backdrop-filter: blur(0.375rem);
+  background: rgba(255, 243, 176, 0.85);
   text-align:center;
-  font-size:14px;
+  font-size:clamp(0.75rem, 2vw, 1.5rem);
   font-family: 'Poppins', sans-serif;
   font-weight:800;
   color:#222;
-  border-top: 1px solid rgba(0,0,0,0.1);
+  border-top: 0.0625rem solid rgba(0,0,0,0.1);
 ">
-
-  <span style="color:#333;">
-    Please vote for 
-  </span>
-
-  <span style="color:#1e3a8a; font-weight:700;">
-    Bindiya Sharma Advocate
-  </span>
-
-  <span style="color:#333;">
-    (Ballot No. 
-  </span>
-
-  <span style="color:#c62828; font-weight:700;">
-    190
-  </span>
-
-  <span style="color:#333;">
-    ) as 
-  </span>
-
-  <span style="color:#d84315; font-weight:700;">
-    First / Best Preference
-  </span>
-
-  <span style="color:#333;">
-    in BCR Election 2026
-  </span>
-
-</div>
-
-</div>
-
-    <!-- DETAILS -->
-    <div style="margin-top:15px;font-size:14px;color:#000">
-
-  <div style="display:flex;gap:10px;margin-bottom:8px">
-    <span>📄</span>
-    <div>
-      Roll Number<br>
-      <b>${v.roll_number || '-'}</b>
+      Please vote for 
+      <span style="color:#1e3a8a;">Bindiya Sharma Advocate</span>
+      (Ballot No. <span style="color:#c62828;">190</span>)
+      as <span style="color:#d84315;">First / Best Preference</span>
+      in BCR Election 2026
     </div>
+
   </div>
 
-  <hr style="margin:12px 0;border:none;border-top:1px solid #000">
+  <!-- DETAILS -->
+  <div style="margin-top:15px;font-size:14px;color:#000">
 
-  <div style="display:flex;gap:10px;margin-bottom:8px">
-    <span>🔢</span>
-    <div>
-      Electoral Number<br>
-      <b>${v.electoral_number || '-'}</b>
+    <div style="display:flex;gap:10px;margin-bottom:8px">
+      <span>📄</span>
+      <div>Roll Number<br><b>${v.roll_number || '-'}</b></div>
     </div>
+
+    <hr style="margin:12px 0;border:none;border-top:1px solid #000">
+
+    <div style="display:flex;gap:10px;margin-bottom:8px">
+      <span>🔢</span>
+      <div>Electoral Number<br><b>${v.electoral_number || '-'}</b></div>
+    </div>
+
+    <hr style="margin:12px 0;border:none;border-top:1px solid #000">
+
+    <div style="display:flex;gap:10px;margin-bottom:8px">
+      <span>🏛</span>
+      <div>Bar Association<br><b>${v.bar_association || '-'}</b></div>
+    </div>
+
+    <hr style="margin:12px 0;border:none;border-top:1px solid #000">
+
+    <div style="display:flex;gap:10px;margin-bottom:8px">
+      <span>⚖</span>
+      <div>Judgeship<br><b>${v.judgship || '-'}</b></div>
+    </div>
+
   </div>
 
-  <hr style="margin:12px 0;border:none;border-top:1px solid #000">
-
-  <div style="display:flex;gap:10px;margin-bottom:8px">
-    <span>🏛</span>
-    <div>
-      Bar Association<br>
-      <b>${v.bar_association || '-'}</b>
-    </div>
-  </div>
-
-  <hr style="margin:12px 0;border:none;border-top:1px solid #000">
-
-  <div style="display:flex;gap:10px;margin-bottom:8px">
-    <span>⚖</span>
-    <div>
-      Judgeship<br>
-      <b>${v.judgship || '-'}</b>
-    </div>
+  <!-- FOOTER -->
+  <div style="margin-top:15px;text-align:center;font-size:12px;color:#777">
+    ⚖ Bar Council of Rajasthan Election 2026 — 22 April 2026
   </div>
 
 </div>
+`;
 
-   
-    <!-- FOOTER -->
-    <div style="margin-top:15px;text-align:center;font-size:12px;color:#777">
-      ⚖ Bar Council of Rajasthan Election 2026 — 22 April 2026
-    </div>
 
-  </div>
-  `;
+setTimeout(() => {
 
+  const img = document.querySelector(".card-img");
+  const circle = document.querySelector(".ballot-circle");
+  const rectBox = document.querySelector(".rect-box");
+
+  function fixPosition() {
+    if (!img || !circle || !rectBox) return;
+
+    const w = img.offsetWidth;
+    const h = img.offsetHeight;
+
+    // 🔴 Circle
+    circle.style.top = (h * 0.38) + "px";
+    circle.style.left = (w * 0.68) + "px";
+    circle.style.transform = "translate(-50%, -50%)";
+
+    // 🔴 Rectangle
+    rectBox.style.top = (h * 0.38) + "px";
+    rectBox.style.left = (w * 0.45) + "px";
+    rectBox.style.transform = "translate(-50%, -50%)";
+
+    // 🔥 Responsive size
+    circle.style.width = (w * 0.18) + "px";
+    circle.style.height = (w * 0.18) + "px";
+    circle.style.fontSize = (w * 0.05) + "px";
+
+    rectBox.style.width = (w * 0.28) + "px";
+    rectBox.style.height = (w * 0.18) + "px";
+    rectBox.style.fontSize = (w * 0.05) + "px";
+  }
+
+  fixPosition();
+  window.addEventListener("resize", fixPosition);
+
+}, 300);
   document.getElementById('modalBox').innerHTML = html;
   document.getElementById('modalOverlay').classList.remove('hidden');
 }
@@ -1639,6 +1633,7 @@ transform:scale(1.08);
 <script async src="https://www.instagram.com/embed.js"></script>
 
 </div>
+
 <section class="py-5 mt-5" id="conatct">
     <div class="container">
 
