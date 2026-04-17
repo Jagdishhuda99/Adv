@@ -14,8 +14,6 @@
     <meta property="og:url" content="https://advocatebindiyasharma99.vercel.app/">
     <meta property="og:type" content="website">
 
-    <meta name="twitter:card" content="summary">
-
     <!-- Twitter (WhatsApp support) -->
     <meta name="twitter:card" content="summary_large_image">
 
@@ -23,7 +21,7 @@
 
     <!-- Favicon -->
     <link rel="icon" href="img/j23.PNG" type="image/png">
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/vendor/fontawesome.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -31,7 +29,7 @@
     <link rel="stylesheet" href="assets/css/plugins/odometer.css">
     <link rel="stylesheet" href="assets/css/vendor/animate.min.css">
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
     <!-- custom css -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/j.css">
@@ -76,7 +74,7 @@
                                     <li class="nav-item"><a  class="smoth-animation" href="#search">मतदाता खोजें </a></li>
                                      
 
-                                    <li class="nav-item"><a class="smoth-animation" href="#conatct">संपर्क करें</a></li>
+                                    <li class="nav-item"><a class="smoth-animation" href="#contact">संपर्क करें</a></li>
                                     
                                     <!-- <li class="nav-item"><a class="smoth-animation" href="contact.php">Contact</a></li> -->
                                 </ul>
@@ -131,7 +129,7 @@
                     <li><a class="smoth-animation" href="#ourss">हमारा संकल्प</a></li>
                    
                     <li><a class="smoth-animation" href="#search">मतदाता खोजें</a></li>
-                    <li><a class="smoth-animation" href="#conatct">संपर्क करें</a></li>
+                    <li><a class="smoth-animation" href="#contact">संपर्क करें</a></li>
                    
                     
                     
@@ -208,6 +206,7 @@
         font-size: 16px;
     }
 </style>
+
 <script>
 let menuBtn = document.getElementById("menuBtn");
 let mobileMenu = document.querySelector(".tmp-popup-mobile-menu");
@@ -453,18 +452,704 @@ closeBtn.addEventListener("click", function () {
         animation: voter-fadein 0.3s ease both;
     }
 </style>
-<!-- ── SEARCH SECTION ── -->
-<div class="search-section bg-light" id="search">
-    <h1 class="search-title">मतदाता सूची में अपना नाम खोजें</h1>
-    <p class="search-subtitle">BCR Preliminary Electoral Roll 2026 — Search by Name or Enrolment Number.</p>
-    <div class="search-box">
-        <input
-            type="text"
-            id="voterSearchInput"
-            placeholder="  अपना नाम या Enrolment Number यहाँ टाइप करें..."
-            autocomplete="off" />
+
+
+
+<style>
+:root{--navy-900:#0a1628;
+    --navy-800:#0d2137;
+    --navy-700:#1a3a5c;
+    --navy-600:#234d78;
+    --gold:#c9a84c;
+    --gold-light:#e8dcc0;
+    --gold-bg:#fff8e1;
+    --red:#c81e1e;
+    --blue:#2563eb;
+    --text:#1a1a2e;
+    --text-light:#4a5568;
+    --text-muted:#8896a6;
+    --bg:#faf8f4;
+    --card:#ffffff;
+    --whatsapp:#25D366;
+    --border:#e8e2d6}
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* LINKS */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(16px)}
+        to {
+            opacity:1;
+            transform:translateY(0)}}
+            
+            @keyframes spin {
+                to{ 
+                    transform:rotate(360deg)}}
+                    
+/* ================= HERO ================= */
+
+.hero {
+  background: linear-gradient(135deg, var(--navy-900) 0%, var(--navy-700) 100%);
+  color: #fff;
+  padding: 28px 24px 0;
+  position: relative;
+  height: 265px;
+  overflow: hidden;
+}
+
+/* ================= HERO (IMPORTANT FORCE) ================= */
+
+/* Background Pattern */
+.hero::before {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z' fill='none' stroke='rgba(201,168,76,0.06)' stroke-width='1'/%3E%3C/svg%3E");
+  pointer-events: none !important;
+}
+
+/* Inner Content */
+.hero-inner {
+  position: relative !important;
+  z-index: 1 !important;
+  max-width: 600px !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+
+/* Heading */
+.hero h1 {
+  font-family: 'DM Serif Display', serif !important;
+  font-size: 28px !important;
+  font-weight: 800 !important;
+  line-height: 1.25 !important;
+  margin-bottom: 8px !important;
+  color: #fff !important;
+}
+
+.hero h1 span {
+  color: var(--gold) !important;
+}
+
+/* Subtitle */
+.hero-sub {
+  font-size: 14px !important;
+  color: rgba(255,255,255,.6) !important;
+  margin-bottom: 24px !important;
+  font-weight: normal !important;
+}
+.search-card{max-width:600px;margin:0 auto;background:var(--card);border-radius:16px 16px 0 0;padding:20px 20px 24px;position:relative;z-index:2}.search-wrap{position:relative}.search-input{width:100%;padding:16px 44px 16px 48px;border:2px solid #e0d9cc;border-radius:12px;font-size:16px;font-family:inherit;background:var(--bg);transition:border-color .2s,box-shadow .2s;outline:none}.search-input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,168,76,.2)}.search-input::placeholder{color:#b0a898}.search-icon{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--text-muted)}.search-clear{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;font-size:18px;color:#999;cursor:pointer;padding:4px;display:none}.search-hints{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;justify-content:center}.search-hint{font-size:11px;color:var(--text-muted);background:rgba(0,0,0,.04);padding:4px 10px;border-radius:12px}
+/* ================= SEARCH (IMPORTANT FORCE) ================= */
+
+.search-card {
+  max-width: 600px !important;
+  margin: 0 auto !important;
+  background: var(--card) !important;
+  border-radius: 16px 16px 0 0 !important;
+  padding: 20px 20px 24px !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.search-wrap {
+  position: relative !important;
+}
+
+/* Input Field */
+.search-input {
+  width: 100% !important;
+  padding: 16px 44px 16px 48px !important;
+  border: 2px solid #e0d9cc !important;
+  border-radius: 12px !important;
+  font-size: 16px !important;
+  font-family: inherit !important;
+  background: var(--bg) !important;
+  transition: border-color .2s, box-shadow .2s !important;
+  outline: none !important;
+}
+
+.search-input:focus {
+  border-color: var(--gold) !important;
+  box-shadow: 0 0 0 3px rgba(201,168,76,.2) !important;
+}
+
+.search-input::placeholder {
+  color: #b0a898 !important;
+}
+
+/* Icons */
+.search-icon {
+  position: absolute !important;
+  left: 16px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  color: var(--text-muted) !important;
+}
+
+.search-clear {
+  position: absolute !important;
+  right: 12px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  background: none !important;
+  border: none !important;
+  font-size: 18px !important;
+  color: #999 !important;
+  cursor: pointer !important;
+  padding: 4px !important;
+  display: none !important;
+}
+
+/* Search Suggestions */
+.search-hints {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  margin-top: 12px !important;
+  justify-content: center !important;
+}
+
+.search-hint {
+  font-size: 11px !important;
+  color: var(--text-muted) !important;
+  background: rgba(0,0,0,.04) !important;
+  padding: 4px 10px !important;
+  border-radius: 12px !important;
+}
+.search-hints span {
+  color: black !important;
+}
+
+
+.results-card{max-width:600px;margin:0 auto;background:var(--card);padding:0 20px 20px;border-radius:0 0 16px 16px;box-shadow:0 8px 32px rgba(0,0,0,.08)}.results-count{font-size:13px;color:var(--text-muted);margin-bottom:12px;text-align:center}.result-btn{display:flex;align-items:center;justify-content:space-between;width:100%;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:12px 16px;margin-bottom:8px;cursor:pointer;font-family:inherit;transition:border-color .2s;text-align:left}.result-btn:hover{border-color:var(--gold)}.result-serial{background:var(--blue);color:#fff;font-size:11px;font-weight:700;padding:3px 8px;border-radius:4px;min-width:44px;text-align:center}.result-name{font-weight:600;font-size:14px;color:var(--navy-800)}.result-meta{font-size:12px;color:var(--text-muted);margin-top:1px}.result-viewbtn{font-size:12px;color:var(--gold);font-weight:700;white-space:nowrap}.results-empty{text-align:center;padding:20px;color:var(--text-muted);font-size:14px}
+/* ================= INFO STRIP (IMPORTANT FORCE) ================= */
+
+.info-strip {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 0 !important;
+  background: var(--gold-bg) !important;
+  border-top: 1px solid rgba(201,168,76,.2) !important;
+  border-bottom: 1px solid rgba(201,168,76,.2) !important;
+}
+
+.info-item {
+  flex: 1 !important;
+  text-align: center !important;
+  padding: 14px 10px !important;
+  border-right: 1px solid rgba(201,168,76,.2) !important;
+}
+
+.info-item:last-child {
+  border-right: none !important;
+}
+
+.info-value {
+  font-family: 'DM Serif Display', serif !important;
+  font-size: 20px !important;
+  color: var(--navy-800) !important;
+}
+
+.info-label {
+  font-size: 10px !important;
+  color: var(--text-muted) !important;
+  text-transform: uppercase !important;
+  letter-spacing: .8px !important;
+  margin-top: 3px !important;
+}
+.modal-overlay{position:fixed;inset:0;background:rgba(10,22,40,.7);z-index:1000;display:flex;align-items:center;justify-content:center;padding:16px;backdrop-filter:blur(4px);animation:fadeUp .15s ease}.modal-overlay.hidden{display:none}.modal-box{background:var(--card);border-radius:16px;max-width:520px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.3)}.modal-header{padding:20px 24px 12px;border-bottom:1px solid #f0ece4}.modal-serial-badge{display:inline-block;background:var(--blue);color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:5px;margin-bottom:8px}.modal-close{position:absolute;top:16px;right:16px;background:#f0ece4;border:none;color:var(--text-muted);font-size:18px;cursor:pointer;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center}.modal-close:hover{background:#e8e2d6}.modal-name{font-family:'DM Serif Display',serif;font-size:22px;color:var(--navy-800)}.modal-reg{font-size:13px;color:var(--text-muted);margin-top:2px}
+/* ================= MODAL (IMPORTANT FORCE) ================= */
+
+.modal-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  background: rgba(10,22,40,.7) !important;
+  z-index: 1000 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 16px !important;
+  backdrop-filter: blur(4px) !important;
+  animation: fadeUp .15s ease !important;
+}
+
+/* 🔥 MOST IMPORTANT FIX */
+.modal-overlay.hidden {
+  display: none !important;
+}
+
+.modal-box {
+  background: var(--card) !important;
+  border-radius: 16px !important;
+  max-width: 520px !important;
+  width: 100% !important;
+  max-height: 90vh !important;
+  overflow-y: auto !important;
+  text-decoration: none !important;
+  box-shadow: 0 20px 60px rgba(0,0,0,.3) !important;
+}
+
+.modal-header {
+  padding: 20px 24px 12px !important;
+  border-bottom: 1px solid #f0ece4 !important;
+}
+
+.modal-serial-badge {
+  display: inline-block !important;
+  background: var(--blue) !important;
+  color: #fff !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  padding: 3px 10px !important;
+  border-radius: 5px !important;
+  margin-bottom: 8px !important;
+}
+
+.modal-close {
+  position: absolute !important;
+  top: 16px !important;
+  right: 16px !important;
+  background: #f0ece4 !important;
+  border: none !important;
+  color: var(--text-muted) !important;
+  font-size: 18px !important;
+  cursor: pointer !important;
+
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.modal-close:hover {
+  background: #e8e2d6 !important;
+}
+
+.modal-name {
+  font-family: 'DM Serif Display', serif !important;
+  font-size: 22px !important;
+  color: var(--navy-800) !important;
+}
+
+.modal-reg {
+  font-size: 13px !important;
+  color: var(--text-muted) !important;
+  margin-top: 2px !important;
+}
+@media(max-width:600px){.hero{padding:20px 16px 0}.hero h1{font-size:22px}.search-card{padding:16px 16px 20px}.results-card{padding:0 16px 16px}.search-input{padding:14px 40px 14px 42px;font-size:15px}.info-value{font-size:16px}.features{padding:36px 16px}.features-title{font-size:22px}.features-grid{grid-template-columns:1fr}.track-record{padding:32px 16px}.track-stat-value{font-size:26px}.cta-section{padding:36px 16px}.cta-section h2{font-size:22px}.cta-btn{padding:14px 24px;font-size:15px}.topbar{font-size:11px;padding:8px 14px}}
+</style>
+
+
+
+<section class="hero">
+  <div class="hero-inner">
+    <h1>Find Your <span>Voting Slip</span></h1>
+    <p class="hero-sub">Search your name in the Bar Council of Rajasthan Electoral Roll 2026</p>
+  </div>
+  <div class="search-card">
+    <div class="search-wrap">
+      <span class="search-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+      <input class="search-input" type="text" id="searchInput" placeholder="Type name, bar association, judgship, roll number — anything you know">
+      <button class="search-clear" id="clearBtn" onclick="clearSearch()">✕</button>
     </div>
+    <div class="search-hints">
+      <span class="search-hint">👤 Name</span>
+      <span class="search-hint">📋 Enrolment No. (R/...)</span>
+      <span class="search-hint">📍 Bar Association / Judgship</span>
+    </div>
+  </div>
+</section>
+
+<div class="results-card"><div id="resultsArea"></div></div>
+
+<div class="info-strip">
+  <div class="info-item"><div class="info-value">84,203</div><div class="info-label">Total Voters</div></div>
+  <div class="info-item"><div class="info-value">22 Apr</div><div class="info-label">Election Date</div></div>
+  <div class="info-item"><div class="info-value">BCR</div><div class="info-label">Rajasthan</div></div>
 </div>
+
+
+<div class="modal-overlay hidden" id="modalOverlay" onclick="if(event.target===this)closeModal()">
+  <div class="modal-box" id="modalBox"></div>
+</div>
+
+<script>
+var searchInput = document.getElementById('searchInput');
+var clearBtn = document.getElementById('clearBtn');
+var resultsArea = document.getElementById('resultsArea');
+
+var searchTimer = null;
+var lastResults = [];
+var searchEnabled = true;
+
+// ---------------- CLEAR ----------------
+function clearSearch(){
+  searchInput.value='';
+  clearBtn.style.display='none';
+  resultsArea.innerHTML='';
+  searchInput.focus();
+}
+
+
+// ---------------- INPUT LISTENER (FIXED) ----------------
+searchInput.addEventListener('input', function(){
+  clearBtn.style.display = this.value ? 'block' : 'none';
+
+  clearTimeout(searchTimer);
+  var q = this.value.trim();
+
+  if(q.length < 2){
+    resultsArea.innerHTML='';
+    return;
+  }
+
+  // 🔥 instant search
+  doSearch(q);
+
+  // 🔥 debounce
+  searchTimer = setTimeout(function(){
+    doSearch(q);
+  }, 400);
+});
+
+// ---------------- SEARCH FUNCTION ----------------
+function doSearch(q){
+  if(!searchEnabled) return;
+
+  resultsArea.innerHTML = `
+    <div style="text-align:center;padding:20px">
+      <div style="width:28px;height:28px;border:3px solid #e5e0d5;border-top-color:#1a3a5c;border-radius:50%;animation:spin .7s linear infinite;margin:0 auto"></div>
+    </div>
+  `;
+
+ const API_BASE = "https://bcr-election-2026.vercel.app";
+ fetch(API_BASE + "/api/search?q=" + encodeURIComponent(q))
+  .then(function(res){
+    if(!res.ok) throw new Error("Network Error");
+    return res.json();
+  })
+  .then(function(data){
+    console.log("API DATA:", data);
+
+    if(!Array.isArray(data)){
+      data = [];
+    }
+
+    lastResults = data;
+    renderResults(data, q);
+  })
+  .catch(function(err){
+    console.error(err);
+    resultsArea.innerHTML = `
+      <div class="results-empty">❌ Error loading data</div>
+    `;
+  });
+}
+
+// ---------------- RENDER RESULTS ----------------
+function renderResults(data, q){
+  if(data.length === 0){
+    resultsArea.innerHTML = `
+      <div class="results-empty">No results found for "${q}"</div>
+    `;
+    return;
+  }
+
+  let html = `<div class="results-count">${data.length} results found</div>`;
+
+  data.forEach((v, i) => {
+    html += `
+    <div>
+      <button class="result-btn" onclick="openModal(${i})">
+        <div style="display:flex;gap:10px;align-items:center">
+          <div class="result-serial">${v.electoral_number || ''}</div>
+          <div>
+            <div class="result-name">${v.name}</div>
+            <div class="result-meta">
+              ${v.roll_number || ''} · ${v.bar_association || v.judgship || ''}
+            </div>
+          </div>
+        </div>
+        <div class="result-viewbtn">View →</div>
+      </button>
+    </div>`;
+  });
+
+  resultsArea.innerHTML = html;
+}
+
+// ---------------- MODAL ----------------
+function openModal(i){
+  var v = lastResults[i];
+  if(!v) return;
+
+  const API_BASE = "https://bcr-election-2026.vercel.app";
+  var slipUrl = API_BASE + "/card/" + v.id;
+
+  var html = `
+  <div style="padding:20px;position:relative">
+
+    <!-- CLOSE -->
+    <button onclick="closeModal()" 
+      style="position:absolute;top:15px;right:15px;background:#eee;border:none;width:34px;height:34px;border-radius:50%;cursor:pointer">
+      ✕
+    </button>
+    
+    <!-- BADGE -->
+    <div style="background:#2563eb;color:#fff;display:inline-block;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600">
+      Electoral No. ${v.electoral_number || '-'}
+    </div>
+
+    <!-- NAME -->
+    <h2 style="margin:10px 0 2px; font-weight:400; color:#0d2137; font-family:'DM Serif Display', serif;">
+  ${v.name}
+</h2>
+    <div style="color:#777;font-size:13px;margin-bottom:12px">
+      ${v.roll_number || '-'}
+    </div>
+    <hr style="margin:16px 0;border:none;border-top:1px solid #e5e0d5">
+    <!-- CARD -->
+    <div style="position:relative;border-radius:12px;overflow:hidden">
+
+  <div style="position:relative; display:inline-block; width:100%;">
+
+  <!-- IMAGE -->
+  <img src="${slipUrl}"
+       style="
+         width:100%;
+         display:block;
+         user-select:none;
+         -webkit-user-drag:none;
+         pointer-events:none;
+       "
+       draggable="false"
+       oncontextmenu="return false;"
+  >
+
+  <!-- PROTECTION OVERLAY -->
+  <div style="
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:10;
+  "
+  oncontextmenu="return false;">
+  </div>
+
+</div>
+
+  <!-- 🔴 NEW BALLOT CIRCLE -->
+  <div style="
+    position:absolute;
+    top:38%;
+    right:52%;
+    transform:translate(50%,-50%);
+    width:110px;
+    height:80px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:800;
+    font-size:22px;
+    color:#111;
+    background:rgba(255,255,255,1);
+  ">
+    
+  </div>
+
+
+  <!-- 🔴 NEW BALLOT CIRCLE -->
+  <div style="
+    position:absolute;
+    top:38%;
+    right:32%;
+    transform:translate(50%,-50%);
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    border:3px solid #111;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:800;
+    font-size:22px;
+    color:#111;
+    background:rgba(255,255,255,1);
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  ">
+    190
+  </div>
+
+  <!-- BOTTOM STRIP -->
+<div style="
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  padding:12px 10px;
+  backdrop-filter: blur(6px);
+  background: rgba(255, 243, 176, 0.85); /* soft yellow */
+  text-align:center;
+  font-size:14px;
+  font-family: 'Poppins', sans-serif;
+  font-weight:800;
+  color:#222;
+  border-top: 1px solid rgba(0,0,0,0.1);
+">
+
+  <span style="color:#333;">
+    Please vote for 
+  </span>
+
+  <span style="color:#1e3a8a; font-weight:700;">
+    Bindiya Sharma Advocate
+  </span>
+
+  <span style="color:#333;">
+    (Ballot No. 
+  </span>
+
+  <span style="color:#c62828; font-weight:700;">
+    190
+  </span>
+
+  <span style="color:#333;">
+    ) as 
+  </span>
+
+  <span style="color:#d84315; font-weight:700;">
+    First / Best Preference
+  </span>
+
+  <span style="color:#333;">
+    in BCR Election 2026
+  </span>
+
+</div>
+
+</div>
+
+    <!-- DETAILS -->
+    <div style="margin-top:15px;font-size:14px;color:#000">
+
+  <div style="display:flex;gap:10px;margin-bottom:8px">
+    <span>📄</span>
+    <div>
+      Roll Number<br>
+      <b>${v.roll_number || '-'}</b>
+    </div>
+  </div>
+
+  <hr style="margin:12px 0;border:none;border-top:1px solid #000">
+
+  <div style="display:flex;gap:10px;margin-bottom:8px">
+    <span>🔢</span>
+    <div>
+      Electoral Number<br>
+      <b>${v.electoral_number || '-'}</b>
+    </div>
+  </div>
+
+  <hr style="margin:12px 0;border:none;border-top:1px solid #000">
+
+  <div style="display:flex;gap:10px;margin-bottom:8px">
+    <span>🏛</span>
+    <div>
+      Bar Association<br>
+      <b>${v.bar_association || '-'}</b>
+    </div>
+  </div>
+
+  <hr style="margin:12px 0;border:none;border-top:1px solid #000">
+
+  <div style="display:flex;gap:10px;margin-bottom:8px">
+    <span>⚖</span>
+    <div>
+      Judgeship<br>
+      <b>${v.judgship || '-'}</b>
+    </div>
+  </div>
+
+</div>
+
+   
+    <!-- FOOTER -->
+    <div style="margin-top:15px;text-align:center;font-size:12px;color:#777">
+      ⚖ Bar Council of Rajasthan Election 2026 — 22 April 2026
+    </div>
+
+  </div>
+  `;
+
+  document.getElementById('modalBox').innerHTML = html;
+  document.getElementById('modalOverlay').classList.remove('hidden');
+}
+function closeModal(e){
+  if(e) e.stopPropagation();
+  document.getElementById('modalOverlay').classList.add('hidden');
+}
+function shareWA(url,name){
+  const text = `Check your voting slip:\n${name}\n${url}`;
+  window.open("https://wa.me/?text=" + encodeURIComponent(text), "_blank");
+}
+
+function closeModal(){document.getElementById('modalOverlay').classList.add('hidden')}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()});
+function forceDownload(url,fn){fetch(url).then(function(r){return r.blob()}).then(function(b){var u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download=fn;document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(u)}).catch(function(){window.open(url,'_blank')})}
+function printSlip(url){window.open(url+'&inline=1','_blank')}
+function sharePortal(){var m="Bar Council of Rajasthan Election 2026 — Find Your Voting Card\n\n84,203 voters in the electoral roll. Search your name and download your Voting Card:\n\n"+window.location.origin+"\n\nBar Council of Rajasthan — 22 April 2026 ⚖";window.open("https://wa.me/?text="+encodeURIComponent(m),"_blank")}
+
+// ---------------- DOWNLOAD ----------------
+function downloadCard(url, name){
+  fetch(url, { mode: 'cors' })
+    .then(res => res.blob())
+    .then(blob => {
+      const blobUrl = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = blobUrl;
+      a.download = "BCR_" + name + ".png";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      window.URL.revokeObjectURL(blobUrl);
+    })
+    .catch(err => {
+      console.error("Download failed:", err);
+      alert("Opening in new tab...");
+      window.open(url, "_blank");
+    });
+}
+
+</script>
+
+
+
 
 <!-- ── RESULTS ── -->
 <div class="container pb-5">
@@ -511,145 +1196,6 @@ closeBtn.addEventListener("click", function () {
         </div>
     </div>
 </div>
-
-<!-- Voters Data -->
-<script src="voters.js"></script>
-
-<script>
-    /* ── CONFIG ── */
-    const VOTER_PAGE_SIZE = 20;
-
-    /* ── STATE ── */
-    let voterCurrentPage = 1;
-    let voterFilteredList = [];
-    let voterDebounce = null;
-
-    /* ── DOM ── */
-    const voterInput = document.getElementById('voterSearchInput');
-    const voterGrid = document.getElementById('voterCardsGrid');
-    const voterResultBox = document.getElementById('voterResultBox');
-    const voterCountText = document.getElementById('voterCountText');
-    const voterQueryLabel = document.getElementById('voterQueryLabel');
-    const voterEmptyEl = document.getElementById('voterEmptyState');
-    const voterLoadWrap = document.getElementById('voterLoadMoreWrap');
-    const voterLoadBtn = document.getElementById('voterLoadMoreBtn');
-
-    /* ── HIGHLIGHT ── */
-    function voterHighlight(text, q) {
-        if (!text || !q) return text || '';
-        const safe = q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-        return text.replace(
-            new RegExp(`(${safe})`, 'gi'),
-            '<span class="voter-highlight-match">$1</span>'
-        );
-    }
-
-    /* ── BUILD ONE CARD ── */
-    function voterBuildCard(v, query, idx) {
-        const col = document.createElement('div');
-        col.className = 'col-md-6 voter-card-col';
-        col.style.animationDelay = (idx % VOTER_PAGE_SIZE * 0.04) + 's';
-
-        col.innerHTML = `
-        <div class="voter-card">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <span class="voter-id">#${v.electoralNumber}</span>
-            <span class="enroll-no">Enrolment No: ${v.rollNumber}</span>
-          </div>
-          <div class="voter-name">${voterHighlight(v.name, query)}</div>
-          <div class="info-text">
-            <i class="bi bi-geo-alt"></i>${voterHighlight(v.barAssociation, query)}
-          </div>
-          <div class="info-text">
-            <i class="bi bi-hammer"></i>Judgship: ${voterHighlight(v.judgship, query)}
-          </div>
-          <div class="info-text">
-            <i class="bi bi-book"></i>Enrolled: ${v.dateOfEnrolment}
-            <p class="note">Note:- Vote For Adv. Bindiya Sharma</p>
-          </div>
-          <div class="bl mt-3">
-                BALLOT NO.<br><b>190</b>
-            </div>
-        </div>
-      `;
-        return col;
-    }
-
-    /* ── RENDER PAGE ── */
-    function voterRenderPage(results, query, page) {
-        const start = (page - 1) * VOTER_PAGE_SIZE;
-        const slice = results.slice(start, start + VOTER_PAGE_SIZE);
-
-        if (page === 1) voterGrid.innerHTML = '';
-
-        slice.forEach((v, i) => {
-            voterGrid.appendChild(voterBuildCard(v, query, i));
-        });
-
-        const shown = Math.min(page * VOTER_PAGE_SIZE, results.length);
-        if (shown < results.length) {
-            voterLoadWrap.classList.add('show');
-        } else {
-            voterLoadWrap.classList.remove('show');
-        }
-    }
-
-    /* ── SEARCH ── */
-    function voterDoSearch(raw) {
-        const q = raw.trim().toLowerCase();
-        voterCurrentPage = 1;
-
-        if (!q) {
-            voterGrid.innerHTML = '';
-            voterResultBox.style.display = 'none';
-            voterEmptyEl.style.display = 'none';
-            voterLoadWrap.classList.remove('show');
-            voterFilteredList = [];
-            return;
-        }
-
-        const all = window.votersData || [];
-        voterFilteredList = all.filter(v =>
-            (v.name && v.name.toLowerCase().includes(q)) ||
-            (v.rollNumber && v.rollNumber.toLowerCase().includes(q)) ||
-            (v.electoralNumber && String(v.electoralNumber).includes(q)) ||
-            (v.barAssociation && v.barAssociation.toLowerCase().includes(q))
-        );
-
-        const total = voterFilteredList.length;
-
-        if (total === 0) {
-            voterGrid.innerHTML = '';
-            voterEmptyEl.style.display = 'block';
-            voterResultBox.style.display = 'none';
-            voterLoadWrap.classList.remove('show');
-        } else {
-            voterEmptyEl.style.display = 'none';
-            voterResultBox.style.display = 'flex';
-
-            const label = total > VOTER_PAGE_SIZE ? `${total}+` : `${total}`;
-            voterCountText.textContent = `${label} मतदाता मिले`;
-            voterQueryLabel.textContent = `RESULTS FOR "${raw.trim().toUpperCase()}"`;
-
-            voterRenderPage(voterFilteredList, q, 1);
-        }
-    }
-
-    /* ── EVENTS ── */
-    voterInput.addEventListener('input', () => {
-        clearTimeout(voterDebounce);
-        voterDebounce = setTimeout(() => voterDoSearch(voterInput.value), 250);
-    });
-
-    voterLoadBtn.addEventListener('click', () => {
-        voterCurrentPage++;
-        voterRenderPage(
-            voterFilteredList,
-            voterInput.value.trim().toLowerCase(),
-            voterCurrentPage
-        );
-    });
-</script>
 
 <section class="commitment-area py-5 mt-5" style="background: none;">
     <div class="container">
