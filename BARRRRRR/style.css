@@ -1,0 +1,47 @@
+#bcr-search-section .topbar{
+  background:#0a1628;
+  color:#fff;
+  padding:10px 20px;
+  display:flex;
+  justify-content:space-between;
+}
+
+#bcr-search-section .search-box{
+  padding:20px;
+  text-align:center;
+}
+
+#bcr-search-section input{
+  padding:12px;
+  width:80%;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+
+#bcr-search-section .result-btn{
+  width:90%;
+  margin:10px auto;
+  display:block;
+  padding:12px;
+  border-radius:8px;
+  border:1px solid #ddd;
+  cursor:pointer;
+  text-align:left;
+}
+
+#modalOverlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.7);
+  display:none;
+  align-items:center;
+  justify-content:center;
+}
+
+#modalBox{
+  background:#fff;
+  width:90%;
+  max-width:500px;
+  border-radius:12px;
+  padding:20px;
+}
